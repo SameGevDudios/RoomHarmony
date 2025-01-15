@@ -28,7 +28,7 @@ public class Movable : MonoBehaviour, IMovable
         StopFall();
         float startPosY = transform.position.y;
         DOTween.Sequence()
-            .Append(transform.DOMoveY(startPosY + _hoverHeight, _hoverDuration).SetEase(Ease.InOutSine))
+            .Append(transform.DOMoveY(startPosY + _hoverHeight, _hoverDuration).SetEase(Ease.OutSine))
             .Append(transform.DOMoveY(startPosY, _jumpDuration).SetEase(Ease.OutBounce));
     }
     public  void StopFall()
