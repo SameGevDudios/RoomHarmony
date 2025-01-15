@@ -1,0 +1,41 @@
+using UnityEngine;
+using DG.Tweening;
+
+public class Movable : MonoBehaviour, IMovable
+{
+    [Header("Fall")]
+    [SerializeField] private float _fallLowestPosition = -10, _fallDuration = 2;
+
+    [Space(1)]
+    [Header("Jump")]
+    [SerializeField] private float _hoverHeight = 1, _hoverDuration = 1, _jumpDuration = 2;
+
+    Tween _moveTween;
+
+    private void Start()
+    {
+        StartFall();
+    }
+    public void StartFall()
+    {
+        _moveTween = transform.DOMoveY(_fallLowestPosition, _fallDuration).SetEase(Ease.InQuad);
+    }
+    public void AnimateStop()
+    {
+        StopFall();
+        float startPosY = transform.position.y;
+        DOTween.Sequence()
+            .Append(transform.DOMoveY(startPosY + _hoverHeight, _hoverDuration).SetEase(Ease.InOutSine))
+            .Append(transform.DOMoveY(startPosY, _jumpDuration).SetEase(Ease.OutBounce));
+    }
+    public  void StopFall()
+    {
+        _moveTween.Kill();
+    }
+    public void MoveTo(Vector3 position)
+    {
+        transform.position = position;
+    }
+    public Vector3 GetPosition() =>
+        transform.position;
+}
