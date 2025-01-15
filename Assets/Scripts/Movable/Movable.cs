@@ -4,11 +4,14 @@ using DG.Tweening;
 public class Movable : MonoBehaviour, IMovable
 {
     [Header("Fall")]
-    [SerializeField] private float _fallLowestPosition = -10, _fallDuration = 2;
+    [SerializeField] private float _fallLowestPosition = -10;
+    [SerializeField] private float _fallDuration = 2;
 
     [Space(1)]
     [Header("Jump")]
-    [SerializeField] private float _hoverHeight = 1, _hoverDuration = 1, _jumpDuration = 2;
+    [SerializeField] private float _hoverHeight = 1;
+    [SerializeField] private float _hoverDuration = 1;
+    [SerializeField] private float _jumpDuration = 2;
 
     private Tween _moveTween;
 
