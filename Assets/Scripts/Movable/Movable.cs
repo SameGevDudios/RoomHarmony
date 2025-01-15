@@ -10,7 +10,7 @@ public class Movable : MonoBehaviour, IMovable
     [Header("Jump")]
     [SerializeField] private float _hoverHeight = 1, _hoverDuration = 1, _jumpDuration = 2;
 
-    Tween _moveTween;
+    private Tween _moveTween;
 
     private void Start()
     {
