@@ -106,8 +106,8 @@ MonoBehaviour:
   _fallLowestPosition: -4.5
   _fallDuration: 2
   _hoverHeight: 1
-  _hoverDuration: 0.5
-  _jumpDuration: 1
+  _hoverDuration: 0.25
+  _jumpDuration: 0.75
 --- !u!114 &1548698980444467874
 MonoBehaviour:
   m_ObjectHideFlags: 0
