@@ -7,7 +7,10 @@ public abstract class SearchCollider : MonoBehaviour
     private bool _canSearch = true;
     private void Start()
     {
-        _pickableMove = _pickableObject.GetComponent<IPickableMove>();
+        if(_pickableObject == null)
+            Debug.LogError($"Pickable Object is not assigned");
+        else
+            _pickableMove = _pickableObject.GetComponent<IPickableMove>();
         if (_pickableMove == null)
             Debug.LogError($"IPickableMove couldn't be found on {_pickableObject.name} GameObject");
     }
