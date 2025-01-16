@@ -14,6 +14,7 @@ public class Movable : MonoBehaviour, IMovable
     [SerializeField] private float _jumpDuration = 2;
 
     private Tween _moveTween;
+    private Sequence _jumpSequence;
 
     private void Start()
     {
@@ -27,13 +28,14 @@ public class Movable : MonoBehaviour, IMovable
     {
         StopFall();
         float startPosY = transform.position.y;
-        DOTween.Sequence()
+        _jumpSequence = DOTween.Sequence()
             .Append(transform.DOMoveY(startPosY + _hoverHeight, _hoverDuration).SetEase(Ease.OutSine))
             .Append(transform.DOMoveY(startPosY, _jumpDuration).SetEase(Ease.OutBounce));
     }
     public  void StopFall()
     {
         _moveTween.Kill();
+        _jumpSequence.Kill();
     }
     public void MoveTo(Vector3 position)
     {
