@@ -2,11 +2,11 @@ using UnityEngine;
 
 public abstract class SearchCollider : MonoBehaviour
 {
-    [SerializeField] private GameObject _pickableObject;
+    [SerializeField] protected GameObject _pickableObject;
     private IPickableMove _pickableMove;
-    private bool _canSearch = true;
+    protected bool _canSearch = true;
 
-    private void Start()
+    protected virtual void Start()
     {
         if(_pickableObject == null)
             Debug.LogError($"Pickable Object is not assigned");
@@ -17,11 +17,8 @@ public abstract class SearchCollider : MonoBehaviour
     }
     protected void AnimateStop()
     {
-        if (_canSearch)
-        {
-            _pickableMove.AnimateStop();
-            _canSearch = false;
-        }
+        _pickableMove.AnimateStop();
+        _canSearch = false;
     }
     public void AllowSearch(bool allow)
     {
