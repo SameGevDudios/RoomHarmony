@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DragController : MonoBehaviour
 {
+    [SerializeField] private LayerMask _searchMask;
     private IInput _input;
     private IMover _mover;
     private IMoverValidator _moverValidator;
@@ -11,7 +12,7 @@ public class DragController : MonoBehaviour
     private void Start()
     {
         // temporary constructor call point
-        Constructor(new DesktopInput(), new Mover(), new MoverValidator());
+        Constructor(new DesktopInput(), new Mover(), new MoverValidatorMask(_searchMask));
     }
     public void Constructor(IInput input, IMover mover, IMoverValidator moverValidator)
     {
