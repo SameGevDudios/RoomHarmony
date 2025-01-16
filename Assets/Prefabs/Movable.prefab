@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6869823996120139572}
   - component: {fileID: 466201513210939776}
   - component: {fileID: 1128647742394756674}
+  - component: {fileID: 468928689263204101}
   - component: {fileID: 4569080029905987722}
   - component: {fileID: 3501459965563591015}
   - component: {fileID: 7430005365630673696}
@@ -108,6 +109,19 @@ MonoBehaviour:
   _hoverHeight: 1
   _hoverDuration: 0.25
   _jumpDuration: 0.75
+--- !u!114 &468928689263204101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854688320851135589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c656446b531718942a71c5661e4dcf67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleSpeed: 10
 --- !u!114 &4569080029905987722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19619cde5f2809a4f8de79d9f220a70d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movableObject: {fileID: 2854688320851135589}
+  _pickableObject: {fileID: 2854688320851135589}
   _searchOffset: {x: 0, y: -0.3, z: 0}
   _searchRadius: 0.09
   _searchMask:
