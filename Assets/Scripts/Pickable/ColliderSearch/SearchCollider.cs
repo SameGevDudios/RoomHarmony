@@ -5,6 +5,7 @@ public abstract class SearchCollider : MonoBehaviour
     [SerializeField] private GameObject _pickableObject;
     private IPickableMove _pickableMove;
     private bool _canSearch = true;
+
     private void Start()
     {
         if(_pickableObject == null)
