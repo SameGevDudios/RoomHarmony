@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3501459965563591015}
   - component: {fileID: 7430005365630673696}
   m_Layer: 6
-  m_Name: Movable
+  m_Name: Pickable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

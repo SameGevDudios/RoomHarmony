@@ -969,24 +969,6 @@ Transform:
   - {fileID: 561462276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &225237011 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2854688320851135589, guid: c31a89617f273e145b5ede45071fb6d8, type: 3}
-  m_PrefabInstance: {fileID: 4946915413496186293}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &225237018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225237011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c656446b531718942a71c5661e4dcf67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scaleSpeed: 0.03
 --- !u!1001 &227910483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6966,16 +6948,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2854688320851135589, guid: c31a89617f273e145b5ede45071fb6d8, type: 3}
       propertyPath: m_Name
-      value: Movable
+      value: Pickable
       objectReference: {fileID: 0}
-    - target: {fileID: 4569080029905987722, guid: c31a89617f273e145b5ede45071fb6d8, type: 3}
-      propertyPath: _pickableObject
-      value: 
-      objectReference: {fileID: 225237011}
-    - target: {fileID: 4569080029905987722, guid: c31a89617f273e145b5ede45071fb6d8, type: 3}
-      propertyPath: _pickableMoveObject
-      value: 
-      objectReference: {fileID: 225237011}
     - target: {fileID: 6869823996120139572, guid: c31a89617f273e145b5ede45071fb6d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.57
@@ -7019,10 +6993,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2854688320851135589, guid: c31a89617f273e145b5ede45071fb6d8, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 225237018}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c31a89617f273e145b5ede45071fb6d8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
