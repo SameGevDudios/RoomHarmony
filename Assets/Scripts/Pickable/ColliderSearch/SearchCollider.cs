@@ -3,19 +3,19 @@ using UnityEngine;
 public abstract class SearchCollider : MonoBehaviour
 {
     [SerializeField] private GameObject _pickableObject;
-    private IPickableMove _pickable;
+    private IPickableMove _pickableMove;
     private bool _canSearch = true;
     private void Start()
     {
-        _pickable = _pickableObject.GetComponent<IPickableMove>();
-        if (_pickable == null)
+        _pickableMove = _pickableObject.GetComponent<IPickableMove>();
+        if (_pickableMove == null)
             Debug.LogError($"IPickableMove couldn't be found on {_pickableObject.name} GameObject");
     }
     protected void AnimateStop()
     {
         if (_canSearch)
         {
-            _pickable.AnimateStop();
+            _pickableMove.AnimateStop();
             _canSearch = false;
         }
     }
