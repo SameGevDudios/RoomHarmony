@@ -9,7 +9,6 @@ public class PickableCollider : MonoBehaviour, IPickableCollider
     {
         Vector3[] vertices = GetColliderVertices();
         _visibleHeight = CalculateVisibleHeight(vertices);
-        print(_visibleHeight);
     }
     private float CalculateVisibleHeight(Vector3[] localVertices)
     {

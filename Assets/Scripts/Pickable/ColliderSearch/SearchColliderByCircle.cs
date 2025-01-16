@@ -27,13 +27,12 @@ public class SearchColliderByCircle : SearchCollider
             // Animation
             AnimateStop();
             // Scale
-            Transform colliderParent = col.transform.parent;
-            IPickableCollider collider = colliderParent.GetComponentInParent<IPickableCollider>();
+            Transform colParent = col.transform.parent;
+            IPickableCollider collider = colParent.GetComponentInParent<IPickableCollider>();
             if (collider != null)
             {
-                float distance = Mathf.Abs(transform.position.y - colliderParent.position.y);
+                float distance = Mathf.Abs(transform.position.y - colParent.position.y);
                 float scale = collider.ScaleByDistance(distance);
-                print($"distance: {distance}, scale: {scale}");
                 _pickableScale.SetNewScale(scale);
             }
         }
