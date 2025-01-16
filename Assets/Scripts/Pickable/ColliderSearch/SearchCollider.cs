@@ -2,18 +2,18 @@ using UnityEngine;
 
 public abstract class SearchCollider : MonoBehaviour
 {
-    [SerializeField] private GameObject _pickableObject;
+    [SerializeField] private GameObject _pickableMoveObject;
     private IPickableMove _pickableMove;
     private bool _canSearch = true;
 
     private void Start()
     {
-        if(_pickableObject == null)
-            Debug.LogError($"Pickable Object is not assigned");
+        if(_pickableMoveObject == null)
+            Debug.LogError($"Pickable Move Object is not assigned");
         else
-            _pickableMove = _pickableObject.GetComponent<IPickableMove>();
+            _pickableMove = _pickableMoveObject.GetComponent<IPickableMove>();
         if (_pickableMove == null)
-            Debug.LogError($"IPickableMove couldn't be found on {_pickableObject.name} GameObject");
+            Debug.LogError($"IPickableMove couldn't be found on {_pickableMoveObject.name} GameObject");
     }
     protected void AnimateStop()
     {
