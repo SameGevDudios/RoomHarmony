@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class Movable : MonoBehaviour, IMovable
+public class PickableMove : MonoBehaviour, IPickableMove
 {
     [Header("Fall")]
     [SerializeField] private float _fallLowestPosition = -10;

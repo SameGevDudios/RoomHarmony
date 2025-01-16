@@ -7,16 +7,16 @@ public class MoverValidatorMask : IMoverValidator
     {
         _serachMask = searchMask;
     }
-    public bool MovableFound(Vector3 searchPosition, out IMovable movable, out SearchCollider searchCollider)
+    public bool PickableFound(Vector3 searchPosition, out IPickableMove pickable, out SearchCollider searchCollider)
     {
-        movable = null;
+        pickable = null;
         searchCollider = null;
         RaycastHit2D hit = Physics2D.Raycast(searchPosition, Vector3.forward, int.MaxValue, _serachMask);
         if (hit)
         {
-            movable = hit.collider.gameObject.GetComponent<IMovable>();
+            pickable = hit.collider.gameObject.GetComponent<IPickableMove>();
             searchCollider = hit.collider.gameObject.GetComponent<SearchCollider>();
         }
-        return movable != null && searchCollider != null;
+        return pickable != null && searchCollider != null;
     }
 }

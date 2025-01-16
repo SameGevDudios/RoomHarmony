@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IMoverValidator
 {
-    bool MovableFound(Vector3 searchPosition, out IMovable movable, out SearchCollider searchCollider);
+    bool PickableFound(Vector3 searchPosition, out IPickableMove pickable, out SearchCollider searchCollider);
 }

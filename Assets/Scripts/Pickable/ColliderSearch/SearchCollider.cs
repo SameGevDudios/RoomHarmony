@@ -2,20 +2,20 @@ using UnityEngine;
 
 public abstract class SearchCollider : MonoBehaviour
 {
-    [SerializeField] private GameObject _movableObject;
-    private IMovable _movable;
+    [SerializeField] private GameObject _pickableObject;
+    private IPickableMove _pickable;
     private bool _canSearch = true;
     private void Start()
     {
-        _movable = _movableObject.GetComponent<IMovable>();
-        if (_movable == null)
-            Debug.LogError($"IMovable couldn't be found on {_movableObject.name} GameObject");
+        _pickable = _pickableObject.GetComponent<IPickableMove>();
+        if (_pickable == null)
+            Debug.LogError($"IPickableMove couldn't be found on {_pickableObject.name} GameObject");
     }
     protected void AnimateStop()
     {
         if (_canSearch)
         {
-            _movable.AnimateStop();
+            _pickable.AnimateStop();
             _canSearch = false;
         }
     }

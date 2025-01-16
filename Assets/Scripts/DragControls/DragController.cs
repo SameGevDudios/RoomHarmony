@@ -24,9 +24,9 @@ public class DragController : MonoBehaviour
     {
         if (_input.CursorDown())
         {
-            if (_moverValidator.MovableFound(_input.CursorWorldPosition(), out IMovable movable, out _searchCollider))
+            if (_moverValidator.PickableFound(_input.CursorWorldPosition(), out IPickableMove pickable, out _searchCollider))
             {
-                StartDragMovable(movable);
+                StartDragPickable(pickable);
             }
         }
         else if (_input.CursorHold())
@@ -44,17 +44,17 @@ public class DragController : MonoBehaviour
         {
             if (_dragStarted)
             {
-                StopDragMovable();
+                StopDragPickable();
             }
         }
     }
-    private void StartDragMovable(IMovable movable)
+    private void StartDragPickable(IPickableMove pickable)
     {
-        _mover.StartDrag(movable, _input.CursorWorldPosition());
+        _mover.StartDrag(pickable, _input.CursorWorldPosition());
         _searchCollider.AllowSearch(false);
         _dragStarted = true;
     }
-    private void StopDragMovable()
+    private void StopDragPickable()
     {
         _mover.StopDrag();
         _searchCollider.AllowSearch(true);

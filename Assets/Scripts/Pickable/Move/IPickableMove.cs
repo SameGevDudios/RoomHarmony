@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IMovable
+public interface IPickableMove
 {
     void StartFall();
     void AnimateStop();
