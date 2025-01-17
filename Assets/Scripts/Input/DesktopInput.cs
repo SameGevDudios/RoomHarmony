@@ -13,9 +13,12 @@ public class DesktopInput : IInput
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         return new Vector3(mousePosition.x, mousePosition.y, 0);
     }
-    public bool CursorDown() => Input.GetMouseButtonDown(0);
-    public bool CursorHold() => Input.GetMouseButton(0);
-    public bool CursorUp() => Input.GetMouseButtonUp(0);
+    public bool CursorDown() => 
+        Input.GetMouseButtonDown(0);
+    public bool CursorHold() => 
+        Input.GetMouseButton(0);
+    public bool CursorUp() => 
+        Input.GetMouseButtonUp(0);
     public bool IsMoving()
     {
         UpdateDelta();
