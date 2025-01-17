@@ -22,7 +22,7 @@ public class DragController : MonoBehaviour
         // temporary constructor call point
         ICameraMover cameraMover = 
             new CameraMover(_cameraObject, _cameraDragSpeed, _cameraMinPosition, _cameraMaxPosition);
-        Constructor(new DesktopInput(), new Mover(), new MoverValidatorMask(_searchMask), cameraMover);
+        Constructor(new MobileInput(), new Mover(), new MoverValidatorMask(_searchMask), cameraMover);
     }
     public void Constructor(IInput input, IMover mover, IMoverValidator moverValidator, ICameraMover cameraMover)
     {
