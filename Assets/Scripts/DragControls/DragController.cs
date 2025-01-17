@@ -2,28 +2,13 @@ using UnityEngine;
 
 public class DragController : MonoBehaviour
 {
-    [Header("Pickable drag")]
-    [SerializeField] private LayerMask _searchMask;
     private IInput _input;
     private IMoverValidator _moverValidator;
     private SearchCollider _searchCollider;
     private IMover _mover;
-
-    [Header("Camera drag")]
-    [SerializeField] private Transform _cameraObject;
-    [SerializeField] private float _cameraDragSpeed, 
-        _cameraMinPosition, _cameraMaxPosition;
     private ICameraMover _cameraMover;
-
     private bool _dragStarted;
 
-    private void Start()
-    {
-        // temporary constructor call point
-        ICameraMover cameraMover = 
-            new CameraMover(_cameraObject, _cameraDragSpeed, _cameraMinPosition, _cameraMaxPosition);
-        Constructor(new MobileInput(), new Mover(), new MoverValidatorMask(_searchMask), cameraMover);
-    }
     public void Constructor(IInput input, IMover mover, IMoverValidator moverValidator, ICameraMover cameraMover)
     {
         _input = input;
