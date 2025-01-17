@@ -3686,6 +3686,10 @@ MonoBehaviour:
   _searchMask:
     serializedVersion: 2
     m_Bits: 64
+  _cameraObject: {fileID: 519420032}
+  _cameraDragSpeed: 10
+  _cameraMinPosition: -20.5
+  _cameraMaxPosition: 20.5
 --- !u!4 &1143616236
 Transform:
   m_ObjectHideFlags: 0
