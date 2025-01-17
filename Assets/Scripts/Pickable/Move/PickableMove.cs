@@ -4,7 +4,7 @@ using DG.Tweening;
 public class PickableMove : MonoBehaviour, IPickableMove
 {
     [Header("Fall")]
-    [SerializeField] private float _fallLowestPosition = -10;
+    [SerializeField] private float _fallHeight = 10;
     [SerializeField] private float _fallDuration = 2;
 
     [Space(1)]
@@ -22,7 +22,7 @@ public class PickableMove : MonoBehaviour, IPickableMove
     }
     public void StartFall()
     {
-        _moveTween = transform.DOMoveY(_fallLowestPosition, _fallDuration).SetEase(Ease.InQuad);
+        _moveTween = transform.DOMoveY(transform.position.y - _fallHeight, _fallDuration).SetEase(Ease.InQuad);
     }
     public void AnimateStop()
     {
