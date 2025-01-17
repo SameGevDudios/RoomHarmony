@@ -13,14 +13,15 @@ public class PickableScale : MonoBehaviour, IPickableScale
         float scale = transform.localScale.x;
         scale = Mathf.Lerp(scale, _currentScale, _scaleSpeed * Time.deltaTime);
         transform.localScale = Vector3.one * scale;
-        // Change z position for proper visual ordering of multiple pickables
-        transform.position = new Vector3(
-            transform.position.x,
-            transform.position.y,
-            -scale);
+        
     }
     public void SetNewScale(float newScale)
     {
         _currentScale = newScale;
+        // Change z position for proper visual ordering of multiple pickables
+        transform.position = new Vector3(
+            transform.position.x,
+            transform.position.y,
+            -_currentScale);
     }
 }
