@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf8422f1048b1e47bee8c59198fca5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fallLowestPosition: -4.5
+  _fallHeight: 10
   _fallDuration: 2
   _hoverHeight: 1
   _hoverDuration: 0.25
